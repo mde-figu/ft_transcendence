@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    env_file:
+      - .env
+    networks:
+      - ft_transcendence
+    ports:
+      - 3000:3000
+    volumes:
+      - backend-data:/var/lib/backend
+    restart: on-failure
+
+networks:
+  ft_transcendence:
+
+volumes:
+  backend-data:
