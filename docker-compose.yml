@@ -12,7 +12,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - backend-data:/var/lib/backend
+      - ./backend:/app
     restart: on-failure
 
 networks:
